@@ -1,2 +1,2 @@
-# Magnet3.0
+# Magnet-robots
 WRO
