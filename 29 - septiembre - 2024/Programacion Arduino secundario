@@ -1,0 +1,86 @@
+// Definir los pines para los sensores y LEDs
+const int trigPin1 = 3;
+const int echoPin1 = 2;
+const int trigPin2 = 7;
+const int echoPin2 = 6;
+
+const int ledPin1 = 13; // LED para el primer sensor
+const int ledPin2 = 12; // LED para el segundo sensor
+
+// Variables para almacenar el tiempo y la distancia de ambos sensores
+long duration1, duration2;
+int distance1, distance2;
+
+void setup() {
+  // Configurar los pines del primer sensor
+  pinMode(trigPin1, OUTPUT);
+  pinMode(echoPin1, INPUT);
+
+  // Configurar los pines del segundo sensor
+  pinMode(trigPin2, OUTPUT);
+  pinMode(echoPin2, INPUT);
+
+  // Configurar los pines de los LEDs
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+
+  // Iniciar la comunicación serial para depuración
+  Serial.begin(9600);
+}
+
+void loop() {
+  // --------- Primer sensor ---------
+  // Enviar un pulso de 10 microsegundos al pin TRIG del primer sensor
+  digitalWrite(trigPin1, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin1, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin1, LOW);
+
+  // Leer el tiempo del pulso en el pin ECHO del primer sensor
+  duration1 = pulseIn(echoPin1, HIGH);
+
+  // Calcular la distancia en cm para el primer sensor
+  distance1 = duration1 * 0.034 / 2;
+
+  // Imprimir la distancia del primer sensor en el monitor serial
+  Serial.print("Distancia Sensor 1: ");
+  Serial.print(distance1);
+  Serial.println(" cm");
+
+  // Si la distancia del primer sensor es menor o igual a 20 cm, encender el LED 1
+  if (distance1 <= 20) {
+    digitalWrite(ledPin1, HIGH);
+  } else {
+    digitalWrite(ledPin1, LOW);
+  }
+
+  // --------- Segundo sensor ---------
+  // Enviar un pulso de 10 microsegundos al pin TRIG del segundo sensor
+  digitalWrite(trigPin2, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin2, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin2, LOW);
+
+  // Leer el tiempo del pulso en el pin ECHO del segundo sensor
+  duration2 = pulseIn(echoPin2, HIGH);
+
+  // Calcular la distancia en cm para el segundo sensor
+  distance2 = duration2 * 0.034 / 2;
+
+  // Imprimir la distancia del segundo sensor en el monitor serial
+  Serial.print("Distancia Sensor 2: ");
+  Serial.print(distance2);
+  Serial.println(" cm");
+
+  // Si la distancia del segundo sensor es menor o igual a 20 cm, encender el LED 2
+  if (distance2 <= 20) {
+    digitalWrite(ledPin2, HIGH);
+  } else {
+    digitalWrite(ledPin2, LOW);
+  }
+
+  // Pequeño retardo antes de la siguiente medición
+  delay(100);
+}
