@@ -1,0 +1,104 @@
+#include <Wire.h>
+#include "Adafruit_TCS34725.h"
+#include <Servo.h>
+
+/* Configuración del sensor TCS34725 con tiempo de integración a 120ms */
+Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_120MS, TCS34725_GAIN_1X);
+
+/* Configuración para el servo y motores */
+Servo miServo;
+const int motorA = 12;
+const int motorB = 13;
+const byte velocidadA = 3;
+const byte velocidadB = 11;
+const int frenoA = 9;
+const int frenoB = 8;
+
+void setup(void) {
+  // Iniciar comunicación serial
+  Serial.begin(19200);
+
+  // Inicializar el sensor TCS34725
+  if (tcs.begin()) {
+    Serial.println("Sensor TCS34725 detectado");
+  } else {
+    Serial.println("No se encontró el TCS34725... revisa las conexiones");
+    while (1);
+  }
+
+  // Configuraciones para el servo y motores
+  Serial.begin(9600);
+  pinMode(motorA, OUTPUT);
+  pinMode(motorB, OUTPUT);
+  pinMode(velocidadA, OUTPUT);
+  pinMode(velocidadB, OUTPUT);
+  pinMode(frenoA, OUTPUT);
+  pinMode(frenoB, OUTPUT);
+  miServo.attach(7);  // Conectar el servo al pin 7
+  pinMode(5, INPUT);
+}
+
+void loop(void) {
+  // Variables para almacenar los valores RGB y la claridad
+  uint16_t r, g, b, c;
+
+  // Obtener los datos en bruto del sensor
+  tcs.getRawData(&r, &g, &b, &c);
+
+  // Calcular los valores normalizados de rojo, verde y azul
+  float red = (float)r / c;
+  float green = (float)g / c;
+  float blue = (float)b / c;
+
+  // Imprimir valores normalizados del sensor para depuración
+  Serial.print("R: "); Serial.print(red);
+  Serial.print(" G: "); Serial.print(green);
+  Serial.print(" B: "); Serial.println(blue);
+
+  // Acciones basadas en el color detectado
+   if (red > 0.4 && green > 0.2 && green < 0.4 && blue < 0.2) {
+    // Si detecta anaranjado, girar a la derecha
+    Serial.println("Color Anaranjado detectado");
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 4);
+    digitalWrite(motorB, HIGH);
+    digitalWrite(frenoB, LOW);
+    analogWrite(velocidadB, 75);
+    miServo.write(45);  // Girar el servo a la derecha
+    delay(600);
+  } else {
+    // Mantener servo en posición neutra si no es color anaranjado
+    miServo.write(87);  // Servo en posición neutra
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 60);
+    digitalWrite(motorB, HIGH);
+    digitalWrite(frenoB, LOW);
+    analogWrite(velocidadB, 60);
+  }
+
+  // Si detecta azul, girar a la izquierda
+  if ((r - g > 1940) && (r - b > 1940)) {
+    Serial.println("Color Azul detectado");
+    miServo.write(149);  // Girar el servo a la izquierda
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 75);
+    digitalWrite(motorB, HIGH);
+    digitalWrite(frenoB, LOW);
+    analogWrite(velocidadB, 8);
+    delay(580);
+  } 
+
+  
+
+  // Imprimir valores brutos de color para depuración
+  Serial.print("R: "); Serial.print(r, DEC); Serial.print(" ");
+  Serial.print("G: "); Serial.print(g, DEC); Serial.print(" ");
+  Serial.print("B: "); Serial.print(b, DEC); Serial.print(" ");
+  Serial.print("C: "); Serial.print(c, DEC); Serial.println(" ");
+
+  // Pequeño retardo para evitar lecturas excesivamente rápidas
+  delay(10);
+}
