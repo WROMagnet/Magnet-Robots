@@ -1,0 +1,93 @@
+// Pins for sensor 1
+const int trigPin1 = 5;
+const int echoPin1 = 4;
+
+// Pins for sensor 2
+const int trigPin2 = 3;
+const int echoPin2 = 2;
+
+// Pins for LEDs
+const int ledPin1 = 13;  // LED 1
+const int ledPin2 = 11;  // LED 2
+
+// Distance limits in cm
+const int distanciaMax = 45;
+const int distanciaMin = 35;
+
+// Function to measure the distance using an ultrasonic sensor
+long medirDistancia(int trigPin, int echoPin) {
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+
+  // Measure the duration of the echo signal
+  long duracion = pulseIn(echoPin, HIGH);
+
+  // Convert the duration into distance (in cm)
+  long distancia = duracion * 0.034 / 2;
+  return distancia;
+}
+
+void setup() {
+  // Setup pins for the sensors
+  pinMode(trigPin1, OUTPUT);
+  pinMode(echoPin1, INPUT);
+
+  pinMode(trigPin2, OUTPUT);
+  pinMode(echoPin2, INPUT);
+
+  // Setup pins for the LEDs
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+
+  // Start the serial monitor (optional)
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Measure the distance for sensor 1
+  long distancia1 = medirDistancia(trigPin1, echoPin1);
+
+  // Measure the distance for sensor 2
+  long distancia2 = medirDistancia(trigPin2, echoPin2);
+
+  // Print distances to the serial monitor (optional)
+  Serial.print("Sensor 1 Distance: ");
+  Serial.print(distancia1);
+  Serial.println(" cm");
+
+  Serial.print("Sensor 2 Distance: ");
+  Serial.print(distancia2);
+  Serial.println(" cm");
+
+  // Logic for Sensor 1
+  if (distancia1 >= distanciaMax) {
+    digitalWrite(ledPin1, HIGH);  // Turn on LED 1 if distance is greater than or equal to max distance (45 cm)
+    digitalWrite(ledPin2, LOW);   // Turn off LED 2
+  } else if (distancia1 <= distanciaMin) {
+    digitalWrite(ledPin2, HIGH);  // Turn on LED 2 if distance is less than or equal to min distance (35 cm)
+    digitalWrite(ledPin1, LOW);   // Turn off LED 1
+  } else {
+    // If the distance does not meet any condition, turn off both LEDs
+    digitalWrite(ledPin1, LOW);
+    digitalWrite(ledPin2, LOW);
+  }
+
+  // Logic for Sensor 2
+  if (distancia2 >= distanciaMax) {
+    digitalWrite(ledPin2, HIGH);  // Turn on LED 2 if distance is greater than or equal to max distance (45 cm)
+    digitalWrite(ledPin1, LOW);   // Turn off LED 1
+  } else if (distancia2 <= distanciaMin) {
+    digitalWrite(ledPin1, HIGH);  // Turn on LED 1 if distance is less than or equal to min distance (35 cm)
+    digitalWrite(ledPin2, LOW);   // Turn off LED 2
+  } else {
+    // If the distance does not meet any condition, turn off both LEDs
+    digitalWrite(ledPin1, LOW);
+    digitalWrite(ledPin2, LOW);
+  }
+
+  // Wait 100 ms before the next measurement
+  delay(100);
+}

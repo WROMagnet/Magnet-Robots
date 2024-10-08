@@ -1,0 +1,57 @@
+#include <Servo.h>
+
+Servo miServo;
+const int motorA = 12;       // Motor control pin
+const byte velocidadA = 3;   // PWM pin for motor speed
+const int frenoA = 9;        // Brake pin for motor
+const int pinObstaculo1 = 2; // Pin to receive signal from the other Arduino (obstacle detection)
+const int pinObstaculo2 = 4; // Another pin for obstacle detection
+
+void setup() {
+  // Initialize serial communication
+  Serial.begin(19200);
+
+  // Setup for servo and motor pins
+  Serial.begin(9600);
+  pinMode(motorA, OUTPUT);      // Motor control pin as output
+  pinMode(velocidadA, OUTPUT);  // PWM speed control pin as output
+  pinMode(frenoA, OUTPUT);      // Motor brake pin as output
+  miServo.attach(7);            // Connect the servo to pin 7
+  pinMode(5, INPUT);            // Unused pin setup for future sensor or input
+
+  // Set pin 2 and 4 as input to detect signals from the other Arduino (obstacles)
+  pinMode(pinObstaculo1, INPUT);
+  pinMode(pinObstaculo2, INPUT);
+}
+
+void loop() {
+  // Check if pin 2 receives a signal (obstacle detected)
+  if (digitalRead(pinObstaculo1) == HIGH) {
+    Serial.println("Obstacle detected, taking evasive action");
+    
+    // Motor action when obstacle is detected
+    digitalWrite(motorA, HIGH);         // Activate motor
+    digitalWrite(frenoA, LOW);          // Release motor brake
+    analogWrite(velocidadA, 60);        // Set motor speed (PWM)
+    miServo.write(70);                  // Move the servo to avoid obstacle
+    delay(200);                         // Wait for 200ms for the movement to complete
+  } else {
+    // Keep the servo in neutral position if no obstacle detected
+    miServo.write(86);                  // Servo in neutral position
+    digitalWrite(motorA, HIGH);         // Keep motor running
+    digitalWrite(frenoA, LOW);          // Release motor brake
+    analogWrite(velocidadA, 60);        // Set motor speed (PWM)
+  }
+
+  // Check if pin 4 detects another obstacle
+  if (digitalRead(pinObstaculo2) == HIGH) {
+    Serial.println("Second obstacle detected, turning servo");
+    
+    // Move servo to the left to avoid the second obstacle
+    miServo.write(110);                 // Turn servo left
+    digitalWrite(motorA, HIGH);         // Keep motor running
+    digitalWrite(frenoA, LOW);          // Release motor brake
+    analogWrite(velocidadA, 60);        // Set motor speed (PWM)
+    delay(200);                         // Wait for 200ms to complete the movement
+  }
+}
