@@ -1,0 +1,2 @@
+We added the Arduino Uno since the TCS3472 color sensor is compatible with the Prizm.
+So we decided to make the Arduino the connection bridge to the Prizm.
