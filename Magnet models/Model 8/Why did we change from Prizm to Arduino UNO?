@@ -1,0 +1,4 @@
+We changed the controller because we changed the robot in many ways and we noticed that the robot had a lot of weight.
+So we changed to Arduino Uno because it is light and we could replicate what the Prizm did with the Arduino UNOs. And if it were possible to program it,
+the sensor would also be easier by using an Arduino as a bridge for the color sensor and the Prizm because the reaction was slow and not effective.
+And so with the Arduinos directly the response would be fast.
