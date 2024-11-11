@@ -69,6 +69,57 @@
 
 - WRO provides us with the [official rules](https://github.com/user-attachments/files/17180985/WRO-2024-Future-Engineers-Self-Driving-Cars-General-Rules.pdf) for this category of Future Engineers.
 
+  ***
+
+  # Explanation of the free track programming
+
+  ## 1. Libraries and Object Creation
+- `Servo.h` library is included to control a servo motor.
+- `miServo` is a `Servo` object to control the direction of the robot by adjusting the servo motor's angle.
+
+  ## 2. Pin Assignments
+- ### Motor Control Pins:
+- `motorA` controls the motor direction.
+- `velocidadA` is used for speed control.
+- `frenoA` controls the brake for the motor.
+
+- ### Ultrasonic Sensor Pins:
+- `trigPin1` and `echoPin1` control ultrasonic sensor 1.
+-`trigPin2` and `echoPin2` control ultrasonic sensor 2.
+
+- ### Distance and Time Limits:
+- `distanciaMax` and `distanciaMin` define maximum and minimum distances in centimeters to decide when the robot should avoid an obstacle.
+- `tiempoLimite` defines a time limit of 57 seconds after which the robot stops.
+
+- ### Time Variable:
+- `tiempoInicio` is used to store the program’s start time to compare against `tiempoLimite`.
+
+## 3. Distance Measurement Function
+- `medirDistancia` function sends a trigger pulse on the ultrasonic sensor and waits for an echo. It calculates the distance based on the time taken for the echo to return.
+
+ ## 4. Setup Function
+- Configures motor and sensor pins.
+- Initializes `Serial` for monitoring, attaches the servo to pin 5, and stores the start time.
+
+ ## 5. Main Loop
+- ### Time Check:
+- If `tiempoLimite` (57 seconds) has passed, the program stops the motor and servo and enters an infinite loop.
+
+### Distance Measurement:
+-The robot checks distances from both ultrasonic sensors and prints these to the Serial Monitor.
+
+### Obstacle Avoidance Logic:
+- For both sensors, if `distancia1` or `distancia2` is greater than `distanciaMax`, the robot moves forward at an angle (servo set to 134 or 104).
+- If the distance is below `distanciaMin`, the robot makes a sharper turn to avoid the obstacle.
+- If the distance is between `distanciaMin` and `distanciaMax`, the servo is set to a neutral position, allowing the robot to move straight.
+
+### Delay:
+- A 100-millisecond delay is added at the end of the loop for stability, balancing detection speed and response rate.
+
+***
+
+# Explanation of the obstacle course programming
+
 
 
 
