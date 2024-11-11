@@ -17,4 +17,6 @@
 - #### In our current robot we use 3 ultrasonic sensors to detect walls and stay away from them.
 ![ultrasonic sensors](https://github.com/user-attachments/assets/d7181325-7033-4a16-a017-a6b810739cf2)
 
-  
+- #### We have used a body from a NISSAN GTR to make our vehicle a GTR.
+  ![Body of a Nissan GTR](https://github.com/user-attachments/assets/07cdab32-1966-4d4b-a09e-3cd979a7920c)
+
