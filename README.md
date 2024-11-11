@@ -1,8 +1,8 @@
 # Magnet-Robot | Future Engineers | Puerto Rico
 
 ## Competitors of this team
-- Daniel Rafael Roman - `17 years old`
-- Victor Jaced Davis - `17 years old`
+- Daniel Rafael Roman Rodriguez - `17 years old`
+- Victor Jaced Davis Rivera - `17 years old`
 - Luis Rios Santos - `17 years old`
 
 ## Content
