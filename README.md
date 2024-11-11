@@ -1,9 +1,9 @@
 # Magnet-Robot | Future Engineers | Puerto Rico
 
 ## Competitors of this team
-- Daniel Roman
-- Victor Jaced
-- Luis Rios
+- Daniel Rafael Roman - `17 years old`
+- Victor Jaced Davis - `17 years old`
+- Luis Rios Santos - `17 years old`
 
 ## Content
  
@@ -67,6 +67,4 @@
 
 #### This category may be similar to autonomous robots that are sent into space to explore planets, since they must avoid any object that gets in their way and also explore and send information about the planet.
 
-- WRO provides us with the official rules for this category of Future Engineers.
-
-[Official Rules](https://github.com/user-attachments/files/17180985/WRO-2024-Future-Engineers-Self-Driving-Cars-General-Rules.pdf)
+- WRO provides us with the [official rules](https://github.com/user-attachments/files/17180985/WRO-2024-Future-Engineers-Self-Driving-Cars-General-Rules.pdf) for this category of Future Engineers.
