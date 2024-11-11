@@ -1,3 +1,7 @@
+This is the link to our YouTube channel.
+www.youtube.com/@wro_magnet
+
+
 https://youtu.be/hhVLvGqZhz8?si=Khf1QOfV7h5JuMS7 > This video is of our previous robot running around the free track.
 
 
