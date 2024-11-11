@@ -12,6 +12,7 @@
 ![Arduino Motor Shield Rev3](https://github.com/user-attachments/assets/b6159c69-01fd-4edb-9dbe-cbcad8ddcd9a)![Expansion module](https://github.com/user-attachments/assets/fad132bf-cc8e-456d-bec0-04251ef596bd)
 
 - #### The DC motor we used was this one for the rear wheel drive since the competition rules prohibit us from having two motors to control each individual tire, so we have this motor that can control two tires at the same time because it has two axles.
+
 ![Two-axis DC motor](https://github.com/user-attachments/assets/67fc4f47-7b80-48e2-8858-8a1b6e3c85ec)
 
 - #### In our current robot we use 3 ultrasonic sensors to detect walls and stay away from them.![ultrasonic sensors](https://github.com/user-attachments/assets/d7181325-7033-4a16-a017-a6b810739cf2)
