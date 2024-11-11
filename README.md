@@ -21,6 +21,8 @@
 | [`before the pre-world cup in Puerto Rico`](https://github.com/users/WROMagnet/projects/6)| This project contains all the modifications we made to the previous robot after the national competition until the pre-world championship.|
 | [`New robot for Turkey`](https://github.com/users/WROMagnet/projects/7)| This project contains the creation of our new robot that we have made for Turkey. It has demonstration videos of the assembly and explanations.|
 
+***
+
 ## Summary of our project
 - #### We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
 
@@ -47,6 +49,23 @@
 [Video of the vehicle on the track](https://youtu.be/ARrVYiQlyKw?si=BYaJd71k7EOW9tmP)
 
 - The program we used was the official Arduino app ["Arduino DEL"](https://www.bing.com/ck/a?!&&p=9efa54b30625e1f45f48d1535274e3f1181cd6e31c043c6980ad2a2e53aceb8cJmltdHM9MTczMTI4MzIwMA&ptn=3&ver=2&hsh=4&fclid=1418bfa8-b117-6a14-2d29-abc9b0876b5e&psq=arduino+DEL&u=a1aHR0cHM6Ly93d3cuYXJkdWluby5jYy9lbi9zb2Z0d2FyZQ&ntb=1)
+
+***
+
+# WHAT IS THIS CATEGORY ABOUT?
+![image](https://github.com/user-attachments/assets/966107c3-231e-46d2-bc14-70191379d4fa)
+
+***
+
+- This is the track for this category in 2024, on this track there are 2 modes, free mode and obstacle mode. In free mode only the robot will have to make 3 laps and stop after completing the 3 laps. In obstacle mode the robot has to make 3 laps while avoiding the obstacles and after making 3 laps it will have to parallel park.
+
+- The obstacles are placed by the Judge and he is the one who assigns the parking spot. Both the obstacles and the parking spot are at the discretion of the Judge, so it is completely random.
+
+- If the robot hits a wall the Judge stops counting the time and when he indicates the robot can be picked up.
+
+- The walls in the center of the court can vary in size.
+
+#### This category may be similar to autonomous robots that are sent into space to explore planets, since they must avoid any object that gets in their way and also explore and send information about the planet.
 
 
 
