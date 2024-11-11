@@ -42,6 +42,7 @@
 
 [Video of the vehicle on the track](https://youtu.be/ARrVYiQlyKw?si=BYaJd71k7EOW9tmP)
 
+- #### The program we used was the official Arduino app "Arduino DEL"
 
 
 
