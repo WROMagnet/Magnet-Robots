@@ -1,0 +1,130 @@
+#include <Servo.h> 
+Servo miServo;  // Create a Servo object named miServo
+
+// Define pins for the motor and speed control
+const int motorA = 12; 
+const byte velocidadA = 3; 
+const int frenoA = 9; 
+
+// Define pins for obstacle sensors
+const int pinObstaculo1 = 2; 
+const int pinObstaculo2 = 4; 
+
+// Pins for ultrasonic sensor 1
+const int trigPin1 = 4; 
+const int echoPin1 = 2;  
+
+// Pins for ultrasonic sensor 2
+const int trigPin2 = 13; 
+const int echoPin2 = 11; 
+
+// Define distance limits in cm
+const int distanciaMax = 55; 
+const int distanciaMin = 45; 
+
+// Time limit in milliseconds (57 seconds)
+const unsigned long tiempoLimite = 57000; 
+unsigned long tiempoInicio;  // Variable to store the start time
+
+// Function to measure distance with an ultrasonic sensor
+long medirDistancia(int trigPin, int echoPin) {
+  digitalWrite(trigPin, LOW);  // Ensure the trigger pin is set to LOW
+  delayMicroseconds(2);  // Small delay to stabilize the signal
+  digitalWrite(trigPin, HIGH);  // Activate the trigger pulse
+  delayMicroseconds(10);  // Duration of the trigger pulse
+  digitalWrite(trigPin, LOW);  // End the trigger pulse
+  
+  long duracion = pulseIn(echoPin, HIGH);  // Measure the echo pulse duration
+  long distancia = duracion * 0.034 / 2;  // Convert to distance in cm
+  return distancia;
+}
+
+void setup() {
+  // Configurations for the servo and motors
+  Serial.begin(9600);
+  pinMode(motorA, OUTPUT);
+  pinMode(velocidadA, OUTPUT);
+  pinMode(frenoA, OUTPUT);
+  miServo.attach(5);  // Attach the servo to pin 5
+
+  // Configure pins for the sensors
+  pinMode(trigPin1, OUTPUT);
+  pinMode(echoPin1, INPUT);
+  pinMode(trigPin2, OUTPUT);
+  pinMode(echoPin2, INPUT);
+
+  // Store the start time
+  tiempoInicio = millis();
+}
+
+void loop() {
+  // Check if the time limit has been reached
+  if (millis() - tiempoInicio >= tiempoLimite) {
+    Serial.println("Time limit reached, stopping program.");
+
+    // Stop movement and the servo
+    digitalWrite(motorA, LOW);
+    digitalWrite(frenoA, HIGH);  // Activate brake
+    analogWrite(velocidadA, 0);  // Set speed to 0
+    miServo.detach();  // Stop the servo
+
+    while (true);  // Stop the program
+  }
+
+  // Measure the distance for sensor 1
+  long distancia1 = medirDistancia(trigPin1, echoPin1);  
+
+  // Measure the distance for sensor 2
+  long distancia2 = medirDistancia(trigPin2, echoPin2);  
+
+  // Display distances in the serial monitor
+  Serial.print("Distance Sensor 1: ");
+  Serial.print(distancia1);
+  Serial.println(" cm");
+
+  Serial.print("Distance Sensor 2: ");
+  Serial.print(distancia2);
+  Serial.println(" cm");
+
+  // Logic for Sensor 1
+  if (distancia1 >= distanciaMax) {
+    Serial.println("Avoiding obstacle");
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+    miServo.write(134);
+  } else if (distancia1 <= distanciaMin) {
+    Serial.println("Avoiding obstacle");
+    miServo.write(104);  // Turn the servo to the left
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+  } else {
+    miServo.write(122);  // Set servo to neutral position
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+  }
+
+  // Logic for Sensor 2
+  if (distancia2 >= distanciaMax) {
+    Serial.println("Avoiding obstacle");
+    miServo.write(104);  // Turn the servo to the left
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+  } else if (distancia2 <= distanciaMin) {
+    Serial.println("Avoiding obstacle");
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+    miServo.write(134);
+  } else {
+    miServo.write(122);  // Set servo to neutral position
+    digitalWrite(motorA, HIGH);
+    digitalWrite(frenoA, LOW);
+    analogWrite(velocidadA, 119);
+  }
+
+  delay(100);  // Reduced delay to improve detection speed
+}
