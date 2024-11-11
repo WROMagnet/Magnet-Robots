@@ -22,22 +22,22 @@
 | [`New robot for Turkey`](https://github.com/users/WROMagnet/projects/7)| This project contains the creation of our new robot that we have made for Turkey. It has demonstration videos of the assembly and explanations.|
 
 ## Summary of our project
-#### We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
+- #### We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
 [Previous robot process](https://github.com/WROMagnet/Magnet-Robots/tree/main/Previous%20vehice%20process).
 
-#### But after the pre-World Cup in Puerto Rico, our team decided to create a new robot that was lighter, smaller and easier to transport. So when we started our project, we started looking around our workshop at school and we found a kit called CVpro which was a robot that was disassembled and was basically a robot that was controlled through a cell phone. But we took advantage of several of its parts to be able to start assembling our new robot. And so we begin the base mount of the robot. 
+- #### But after the pre-World Cup in Puerto Rico, our team decided to create a new robot that was lighter, smaller and easier to transport. So when we started our project, we started looking around our workshop at school and we found a kit called CVpro which was a robot that was disassembled and was basically a robot that was controlled through a cell phone. But we took advantage of several of its parts to be able to start assembling our new robot. And so we begin the base mount of the robot. 
 [Day one of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/100)
 
 [Day two of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/102)
 
 [Day three of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/103)
 
-#### After we assembled the base robot we started modifying it to make it look good and most importantly to make the robot work.
+- #### After we assembled the base robot we started modifying it to make it look good and most importantly to make the robot work.
 [Modifications](https://github.com/WROMagnet/Magnet-Robots/issues/104)
 
 [Modifications](https://github.com/WROMagnet/Magnet-Robots/issues/106)
 
-#### After we made all the modifications we programmed it mainly for the smooth track.And we put him on the track to run.
+- #### After we made all the modifications we programmed it mainly for the smooth track.And we put him on the track to run.
 [Programming](https://github.com/WROMagnet/Magnet-Robots/blob/main/src/Free%20track/Arduino%20Mega%20Programming.txt)
 
 [Video of the vehicle on the track](https://youtu.be/ARrVYiQlyKw?si=BYaJd71k7EOW9tmP)
