@@ -14,7 +14,6 @@
 | [`src`](https://github.com/WROMagnet/Magnet-Robots/tree/main/src)| [Free track programming](https://github.com/WROMagnet/Magnet-Robots/blob/main/src/Free%20track/Arduino%20Mega%20Programming.txt), [Obstacle course programming](https://github.com/WROMagnet/Magnet-Robots/blob/main/src/obstacle%20course/Programming.txt)|
 | [`Videos`](https://github.com/WROMagnet/Magnet-Robots/tree/main/videos)| [Links](https://github.com/WROMagnet/Magnet-Robots/blob/main/videos/Links.md), [Our youtube channel](http://www.youtube.com/@wro_magnet)|
 
-## Projects
 
 | Project  | Context| 
 | -- | -- |
