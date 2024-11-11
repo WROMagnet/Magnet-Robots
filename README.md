@@ -23,26 +23,30 @@
 
 ## Summary of our project
 - #### We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
+
 [Previous robot process](https://github.com/WROMagnet/Magnet-Robots/tree/main/Previous%20vehice%20process).
 
-- #### But after the pre-World Cup in Puerto Rico, our team decided to create a new robot that was lighter, smaller and easier to transport. So when we started our project, we started looking around our workshop at school and we found a kit called CVpro which was a robot that was disassembled and was basically a robot that was controlled through a cell phone. But we took advantage of several of its parts to be able to start assembling our new robot. And so we begin the base mount of the robot. 
+- But after the pre-World Cup in Puerto Rico, our team decided to create a new robot that was lighter, smaller and easier to transport. So when we started our project, we started looking around our workshop at school and we found a kit called CVpro which was a robot that was disassembled and was basically a robot that was controlled through a cell phone. But we took advantage of several of its parts to be able to start assembling our new robot. And so we begin the base mount of the robot. 
+
 [Day one of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/100)
 
 [Day two of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/102)
 
 [Day three of our current robot build](https://github.com/WROMagnet/Magnet-Robots/issues/103)
 
-- #### After we assembled the base robot we started modifying it to make it look good and most importantly to make the robot work.
+- After we assembled the base robot we started modifying it to make it look good and most importantly to make the robot work.
+
 [Modifications](https://github.com/WROMagnet/Magnet-Robots/issues/104)
 
 [Modifications](https://github.com/WROMagnet/Magnet-Robots/issues/106)
 
-- #### After we made all the modifications we programmed it mainly for the smooth track.And we put him on the track to run.
+- After we made all the modifications we programmed it mainly for the smooth track.And we put him on the track to run.
+
 [Programming](https://github.com/WROMagnet/Magnet-Robots/blob/main/src/Free%20track/Arduino%20Mega%20Programming.txt)
 
 [Video of the vehicle on the track](https://youtu.be/ARrVYiQlyKw?si=BYaJd71k7EOW9tmP)
 
-- #### The program we used was the official Arduino app "Arduino DEL"
+- The program we used was the official Arduino app ["Arduino DEL"](https://www.bing.com/ck/a?!&&p=9efa54b30625e1f45f48d1535274e3f1181cd6e31c043c6980ad2a2e53aceb8cJmltdHM9MTczMTI4MzIwMA&ptn=3&ver=2&hsh=4&fclid=1418bfa8-b117-6a14-2d29-abc9b0876b5e&psq=arduino+DEL&u=a1aHR0cHM6Ly93d3cuYXJkdWluby5jYy9lbi9zb2Z0d2FyZQ&ntb=1)
 
 
 
