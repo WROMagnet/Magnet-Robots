@@ -4,7 +4,7 @@
 ## https://youtu.be/hhVLvGqZhz8?si=Khf1QOfV7h5JuMS7 > This video is of our previous robot running around the free track.
 
 
-https://youtu.be/ITf6zjNdGf4?si=fG3B4TsUwcV2ThAw > ## This video is of our previous robot in the pre-world championship doing almost all 3 laps in the free round.
+## https://youtu.be/ITf6zjNdGf4?si=fG3B4TsUwcV2ThAw > This video is of our previous robot in the pre-world championship doing almost all 3 laps in the free round.
 
 
 ## https://youtu.be/ijhdlIuoAmo?si=dTO81hXuuTpv2Wf2 > This video is of our current robot mount.
