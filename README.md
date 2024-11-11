@@ -15,6 +15,7 @@
 | [`Videos`](https://github.com/WROMagnet/Magnet-Robots/tree/main/videos)| [Links](https://github.com/WROMagnet/Magnet-Robots/blob/main/videos/Links.md), [Our youtube channel](http://www.youtube.com/@wro_magnet)|
 ##
 
+
 | Project  | Context| 
 | -- | -- |
 | [`Before the national competitions`](https://github.com/users/WROMagnet/projects/5)| This project contains the process of the previous robot before the national competition.|
