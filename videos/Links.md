@@ -24,3 +24,11 @@ and why we made them.](https://youtu.be/HL4ZXFyc26Q?si=e2px4Mm7w4greEJ2)
 ##
 
 [This video is of the current robot doing 3 laps on the free track with its latest modification.](https://youtu.be/ARrVYiQlyKw?si=NkxZ_IRkJ4-Sf5GU)
+##
+
+[Problem solution for obstacle course.](https://youtu.be/FgQFWuhve9Q?si=DuUHthzkjsBea9IR)
+
+
+
+
+
