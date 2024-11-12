@@ -50,6 +50,8 @@
 
 - The program we used was the official Arduino app ["Arduino DEL"](https://www.bing.com/ck/a?!&&p=9efa54b30625e1f45f48d1535274e3f1181cd6e31c043c6980ad2a2e53aceb8cJmltdHM9MTczMTI4MzIwMA&ptn=3&ver=2&hsh=4&fclid=1418bfa8-b117-6a14-2d29-abc9b0876b5e&psq=arduino+DEL&u=a1aHR0cHM6Ly93d3cuYXJkdWluby5jYy9lbi9zb2Z0d2FyZQ&ntb=1)
 
+- For the obstacle course we have mixed lego spike with arduino so to program the lego spike we have used block programming and the program we use to program the [lego spike](https://www.bing.com/ck/a?!&&p=74fa6ae522d1ece837d01362ed0b58f378fc8642357f599fcba9f03a8ab3e9f4JmltdHM9MTczMTI4MzIwMA&ptn=3&ver=2&hsh=4&fclid=1418bfa8-b117-6a14-2d29-abc9b0876b5e&psq=descargar+lego+spike&u=a1aHR0cHM6Ly9lZHVjYXRpb24ubGVnby5jb20vZXMtZXMvZG93bmxvYWRzL3NwaWtlLWFwcC9zb2Z0d2FyZS8&ntb=1)
+
 ***
 
 # WHAT IS THIS CATEGORY ABOUT?
