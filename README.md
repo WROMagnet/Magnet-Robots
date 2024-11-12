@@ -24,7 +24,7 @@
 ***
 
 ## Summary of our project
-- #### We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
+- We started by building a robot made from parts from one of the Pitsco Tetrix kits, which is no longer the robot we are using today. The previous robot was made of metal and complied very exactly with the maximum measurements indicated in the rules. 
 
 [Previous robot process](https://github.com/WROMagnet/Magnet-Robots/tree/main/Previous%20vehice%20process).
 
