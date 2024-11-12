@@ -106,7 +106,7 @@
 - If `tiempoLimite` (57 seconds) has passed, the program stops the motor and servo and enters an infinite loop.
 
 ### Distance Measurement:
--The robot checks distances from both ultrasonic sensors and prints these to the Serial Monitor.
+- The robot checks distances from both ultrasonic sensors and prints these to the Serial Monitor.
 
 ### Obstacle Avoidance Logic:
 - For both sensors, if `distancia1` or `distancia2` is greater than `distanciaMax`, the robot moves forward at an angle (servo set to 134 or 104).
