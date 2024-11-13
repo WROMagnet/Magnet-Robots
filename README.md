@@ -122,10 +122,6 @@
 
 ***
 
-# Explanation of the obstacle course programming
-
-
-
 
 
 
