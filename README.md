@@ -59,6 +59,8 @@
 
 - [The demonstration of how we mix the lego spike controller with the arduino.](https://github.com/WROMagnet/Magnet-Robots/issues/108)
 
+- [Final modifications and why.](https://github.com/WROMagnet/Magnet-Robots/issues/110)
+
 ***
 
 # WHAT IS THIS CATEGORY ABOUT❓
